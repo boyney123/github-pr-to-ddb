@@ -8,6 +8,11 @@ on:
     types:
       - closed
 
+env:
+  ## Sets environment variable
+  PR_NUMBER: ${{ github.event.pull_request }}   
+  GITHUB_REPO: ${{ github.event.repo.url }}   
+
 jobs:
   if_merged:
 
@@ -33,8 +38,8 @@ jobs:
     - run: npm i
 
     - run: npm run write 
-      with:
-        "github-url": ${{ github.event.repo.url }}
+      # with:
+        # "github-url": ${{ github.event.repo.url }}
       #   modified-files: ${{ steps.changed-files.outputs.modified_files }}
       #   LOL: "hello"
       #   random: github.event.number
