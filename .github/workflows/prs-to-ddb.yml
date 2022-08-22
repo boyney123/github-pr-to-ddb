@@ -33,12 +33,12 @@ jobs:
     - run: npm i
 
     - run: npm run write 
-      with:
-        new-files: ${{ steps.changed-files.outputs.added_files }}
-        modified-files: ${{ steps.changed-files.outputs.modified_files }}
-        LOL: "hello"
-        random: github.event.number
-        TEST: github.event
+      # with:
+      #   new-files: ${{ steps.changed-files.outputs.added_files }}
+      #   modified-files: ${{ steps.changed-files.outputs.modified_files }}
+      #   LOL: "hello"
+      #   random: github.event.number
+      #   TEST: github.event
       
     - run: echo github.event.number = ${{ github.event.number  }}
     - run: echo github.event.pull_request.number = ${{ github.event.pull_request.number }}
