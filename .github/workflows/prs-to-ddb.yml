@@ -10,13 +10,15 @@ on:
 
 jobs:
   if_merged:
+  
     if: github.event.pull_request.merged == true
+
     runs-on: ubuntu-latest
+
     steps:
 
     - name: Checkout code
       uses: actions/checkout@v3
 
     - name: Get changed files using defaults
-    - run: |
-        echo The PR was merged
+    - run: echo The PR was merged
