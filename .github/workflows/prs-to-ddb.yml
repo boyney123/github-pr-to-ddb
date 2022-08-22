@@ -8,17 +8,16 @@ on:
     types:
       - closed
 
-env:
-  ## Sets environment variable
-  PR_NUMBER: ${{ github.event.pull_request }}   
-  GITHUB_REPO: ${{ github.event.repo.url }}   
-
 jobs:
   if_merged:
 
     if: github.event.pull_request.merged == true
 
     runs-on: ubuntu-latest
+    env:
+      ## Sets environment variable
+      PR_NUMBER: ${{ github.event.pull_request }}   
+      GITHUB_REPO: ${{ github.event.repo.url }}   
 
     steps:
 
