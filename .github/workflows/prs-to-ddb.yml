@@ -33,9 +33,9 @@ jobs:
     - run: npm i
 
     - run: npm run write 
-      with:
-        new-files: ${{ steps.changed-files.outputs.added_files }}
-        modified-files: ${{ steps.changed-files.outputs.modified_files }}
+      #with:
+        #new-files: ${{ steps.changed-files.outputs.added_files }}
+       # modified-files: ${{ steps.changed-files.outputs.modified_files }}
       
 
     - name: Get changed files using defaults
