@@ -36,7 +36,8 @@ jobs:
 
     - run: |
         echo "Set from manual input: ${{ github.event.pull_request.number }}"
-        echo "FOO=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+        echo "PULL_REQUEST_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+        echo "GITHUB_URL=${{ github.event.repo.url }}" >> $GITHUB_ENV
 
     - run: npm run write 
       # with:
