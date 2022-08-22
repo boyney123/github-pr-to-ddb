@@ -30,7 +30,7 @@ jobs:
       with:
         separator: ","    
 
-    - run: npm ci
+    - run: npm i
 
     - run: npm run write 
       with:
