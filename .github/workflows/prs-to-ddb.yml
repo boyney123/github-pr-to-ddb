@@ -33,8 +33,8 @@ jobs:
     - run: npm i
 
     - run: npm run write 
-      # with:
-      #   new-files: ${{ steps.changed-files.outputs.added_files }}
+      with:
+        github-url: ${{ github.event.repo.url }}
       #   modified-files: ${{ steps.changed-files.outputs.modified_files }}
       #   LOL: "hello"
       #   random: github.event.number
@@ -43,6 +43,7 @@ jobs:
     - run: echo github.event.number = ${{ github.event.number  }}
     - run: echo github.event.pull_request.number = ${{ github.event.pull_request.number }}
     - run: echo github.event.pull_request = ${{ github.event.pull_request }}
+    - run: echo github.event.repo.url = ${{ github.event.repo.url }}
 
     - name: Get changed files using defaults
       run: echo The PR was merged
