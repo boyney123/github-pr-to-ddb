@@ -34,7 +34,7 @@ jobs:
 
     - run: npm run write 
       with:
-        github-url: ${{ github.event.repo.url }}
+        "github-url": ${{ github.event.repo.url }}
       #   modified-files: ${{ steps.changed-files.outputs.modified_files }}
       #   LOL: "hello"
       #   random: github.event.number
