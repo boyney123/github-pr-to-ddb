@@ -28,6 +28,8 @@ jobs:
       with:
         node-version: 16  
 
+      
+
     - name: Get changed files using defaults
       id: changed-files
       uses: tj-actions/changed-files@v19
@@ -35,6 +37,10 @@ jobs:
         separator: ","    
 
     - run: npm i
+
+    - run: |
+        echo "Set from manual input: ${{ github.event.pull_request.number }}"
+        echo "FOO=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
 
     - run: npm run write 
       # with:
