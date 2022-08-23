@@ -1,5 +1,6 @@
 const { DynamoDBClient, PutItemCommand } = require('@aws-sdk/client-dynamodb');
 const client = new DynamoDBClient({
+  region: process.env.REGION,
   credentials: {
     accessKeyId: process.env.AWS_ACCESS_KEY,
     secretAccessKey: process.env.AWS_SECRET_KEY,
@@ -28,7 +29,6 @@ const main = async () => {
     console.log(error);
     console.log('Failed to save PR into DDB');
   }
-
 };
 
 main();
